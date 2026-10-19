@@ -51,7 +51,7 @@ Installation
 2. Install the dependency
    pip install -r requirements.txt
 3. Configure MySQL
-   Configure the database host, username, password, and database name using environment variables or your own local configuration. The supplied source currently contains hard-coded connection details, so update the connection function before running or publishing it.
+   Configure the database host, username, password, and database name using environment variables or your own local configuration. 
    Example environment variables:
    macOS/Linux:
    export DB_HOST=localhost
@@ -83,17 +83,6 @@ Resolved	The complaint has been resolved.
 Rejected	The complaint has been rejected.
 
 
-Security and Known Issues
-This project is suitable as a learning project, but the supplied source should be reviewed and fixed before it is run or published for real use.
-- Credentials: The pasted code contains a hard-coded MySQL password. Remove it from source code, use environment-based configuration, and never commit real credentials.
-- Password storage: User and default administrator passwords are stored as plain text in the supplied implementation. Use a suitable password-hashing method before using real accounts.
-- Default administrator: The source attempts to create a default admin account with a predictable password. Replace this behavior with secure setup and change any demo credentials.
-- Database initialization: The pasted database-creation statement appears to have a Python string-syntax issue.
-- Category schema: The categories table declares user_id as required, but the supplied category insertion statements do not provide it. Decide whether categories are global or user-specific, then make the schema and insert statements consistent.
-- Configuration: The connection helper accepts a database argument, but the supplied code appears to use a hard-coded database name in the connection call.
-- Testing: Test database creation, registration, login, complaint submission, and admin status updates against a fresh local database.
-
-These items are listed as review notes, not as fixes that have already been completed.
 Screenshots
 ![Main menu]![alt text](image.png)
 Future Improvements
